@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         @font-face {
+            font-family: myfont;
+            src: url(MadLines.ttf);
+        }
+
+         .denheading{
+            background-image: linear-gradient(to bottom, #20fc03 , rgb(0, 0, 0));
+            height: 400px;
+            margin-top: 0px;
+        }
+
+        ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #000000;
+        }
+
+        li {
+        float: left;
+        }
+
+        li a {
+        display: block;
+        color: #20fc03;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+        background-color: #20fc03;
+        color: black;
+        border-radius: 10px;
+        }
+
+        .active {
+        background-color: #ff0000;
+        }
+        
+        #GFG {
+            color: #20fc03;
+            font-size: large;
+            font-size: 30px;
+            border: #20fc03 2px solid;
+            border-left-color: transparent ;
+            border-right-color: transparent ;
+        }
+
+        .vids{
+            display: flex;
+        }
+
+        #vid1{
+            border: #20fc03 2px solid;
+            border-radius: 10px;
+            padding: auto;
+            padding-bottom: 150px;
+            margin: auto;
+        }
+
+        #vid2{
+            border: #20fc03 2px solid;
+            border-radius: 10px;
+            padding: auto;
+            padding-bottom: 150px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+    <marquee width="100%" id="GFG">
+        Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World
+    </marquee>
+
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="dinoden.html" class="den-icon">Dino Den</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+
+    <div class="denheading" >
+        <h1 class="page-name" style="color: #000000; text-align: center; font-size: 200px; font-family: myfont; margin-top: 20px;">Dino Den</h1>
+    </div>
+
+    <div class="vids">
+        <div id="vid1">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/zjhCB_OjIPs?si=Hmsl0V9lGB95RJNm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div id="vid2">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/EhdvHjJGknA?si=zbS1N6rZZLYK99qz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+
+</body>
+</html>
