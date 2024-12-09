@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinosaur World</title>
+</head>
+<style>
+@keyframes zoomIn {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.55);
+    }
+}
+
+@font-face {
+            font-family: myfont;
+            src: url(MadLines.ttf);
+        }
+
+.factheading {
+    background-image: linear-gradient(to bottom, #20fc03 60%, rgb(0, 0, 0));
+    margin-top: 0px;
+    padding-bottom: 100px;
+}
+#GFG {
+            color: #20fc03;
+            font-size: 30px;
+            border: #20fc03 2px solid;
+            border-left-color: transparent;
+            border-right-color: transparent;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000000;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: #20fc03;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #20fc03;
+            color: black;
+            border-radius: 10px;
+        }
+
+        .active {
+            background-color: #ff0000;
+        }
+
+.about, .more {
+    background-image:linear-gradient(to bottom, #20fc03 60%, rgb(0, 0, 0));
+    color: #333;
+    text-align: center;
+}
+.dinosaur-card {
+    display: inline-block;
+    margin: 1em;
+    padding: 1em;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: left;
+    background: #f9f9f9;
+    transition: transform 0.4s;
+}
+.dinosaur-card:hover {
+    transform: scale(1.3);
+}
+.dinosaur-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+}
+.contact {
+    background: #f4f4f4;
+    padding: 0px;
+    text-align: center;
+}
+.contact form {
+    max-width: 500px;
+    margin: auto;
+    background: hsl(0, 0%, 100%);
+    padding: 0px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.contact form input, .contact form textarea {
+    width: 100%;
+    padding: 0px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.contact form button {
+    padding: 0px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.contact form button:hover {
+    background: #555;
+}
+
+</style>
+<body style="background-color: #000000;">
+    <marquee width="100%" id="GFG">
+        Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World
+    </marquee>
+    
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="facts.html">DinoScope</a></li>
+        <li><a href="dinoden.html" class="den-icon">Dino Den</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+
+    <div class="factheading" >
+        <h1 class="page-name" style="color: #000000; text-align: center; font-size: 200px; font-family: myfont; margin-top: 20px;">DinoScope</h1>
+    </div>
+
+    <section id="more" class="section more">
+        <h2>Welcome to Dino World!!!</h2>
+        <div class="dinosaur-card">
+            <img src="animal-dinosaur-tyrannosaurus-rex-wallpaper-preview.jpg" alt="Tyrannosaurus Rex">
+            <h3>Tyrannosaurus Rex</h3>
+            <p>One of the most famous carnivorous dinosaurs, known for its powerful bite and massive size.</p>
+        </div>
+        <div class="dinosaur-card">
+            <img src="360_F_724395877_ONCdFugBQP4aEQNuvI82KUpo64Tnv3XP.jpg" alt="Brachiosaurus">
+            <h3>Brachiosaurus</h3>
+            <p>A long-necked herbivore that could reach high into trees to feed on leaves.</p>
+        </div>
+        <div class="dinosaur-card">
+            <img src="pngtree-dinosaur-triceratops-in-the-dark-image_15652694.jpg" alt="Triceratops">
+            <h3>Triceratops</h3>
+            <p>Known for its three horns and large frill, this herbivore lived during the late Cretaceous period.</p>
+        </div>
+        <div class="dinosaur-card">
+            <img src="animal-dinosaur-velociraptor-wallpaper-preview.jpg" alt="Velociraptor">
+            <h3>Velociraptor</h3>
+            <p>A small, fast, and intelligent predator that hunted in packs.</p>
+        </div>
+        <div class="dinosaur-card">
+            <img src="istockphoto-1168444910-612x612.jpg" alt="Stegosaurus">
+            <h3>Stegosaurus</h3>
+            <p>Famous for its row of large plates along its back and spiked tail used for defense.</p>
+        </div>
+        <div class="dinosaur-card">
+            <img src="pngtree-big-dinosaur-standing-next-to-a-little-bit-of-water-picture-image_3169548.jpg" alt="Diplodocus">
+            <h3>Diplodocus</h3>
+            <p>A giant herbivore with a long tail and neck, perfect for sweeping across vegetation.</p>
+        </div>
+
+        <div class="dinosaur-card">
+            <img src="brontosaurus-3d-render-reconstruction-full-width.jpg" alt="Diplodocus">
+            <h3>Brontosaurus</h3>
+            <p>Brontosaurus is a genus of herbivorous sauropod dinosaur that lived in present-day United States during the Late Jurassic period.</p>
+        </div>
+        <div class="dinosaur-card">
+            <img src="istockphoto-1133035805-612x612.jpg" alt="Diplodocus">
+            <h3>Allosaurus</h3>
+            <p>Allosaurus is an extinct genus of large carnosaurian theropod dinosaur that lived 155 to 145 million years ago during the Late Jurassic period.</p>
+        </div>
+        <div class="dinosaur-card">
+            <img src="how-accurately-did-jurassic-world-dominion-portray-v0-8y9u1bn3q3g91.webp" alt="Diplodocus">
+            <h3>Therizinosaurus</h3>
+            <p>Therizinosaurus is a genus of very large therizinosaurid that lived in Asia during the Late Cretaceous period in what is now the Nemegt Formation around 70 million years ago.</p>
+        </div>
+        <div class="dinosaur-card">
+            <img src="306460b900898b9af56d50e8e0f8efe9_1024x.webp" alt="Diplodocus">
+            <h3>Amargasaurus</h3>
+            <p>Amargasaurus is a genus of sauropod dinosaur from the Early Cretaceous epoch of what is now Argentina.</p>
+        </div>
+        <div class="dinosaur-card">
+            <img src="Iguanodon.jpg" alt="Diplodocus">
+            <h3>Iguanodon</h3>
+            <p>Iguanodon, named in 1825, is a genus of iguanodontian dinosaur.While many species found worldwide have been classified in the genus Iguanodon, dating from the Late Jurassic to Early Cretaceous  taxonomic revision in the early 21st century has defined Iguanodon to be based on one well-substantiated species.</p>
+        </div>
+        <div class="dinosaur-card">
+            <img src="maxresdefault.jpg" alt="Diplodocus">
+            <h3>Microraptor</h3>
+            <p>Microraptor is a genus of small, four-winged dromaeosaurid dinosaurs. Numerous well-preserved fossil specimens have been recovered from Liaoning, China.They date from the early Cretaceous Jiufotang Formation (Aptian stage), 125 to 120 million years ago. Three species have been named (M. zhaoianus, M. gui, and M. hanqingi), though further study has suggested that all of them represent variation in a single species, which is properly called M. zhaoianus.</p>
+        </div>
+    </section>
+</body>
+</html>
