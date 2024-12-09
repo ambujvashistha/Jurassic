@@ -11,57 +11,69 @@
             src: url(MadLines.ttf);
         }
 
-        .heading{
-            background-image: linear-gradient(to bottom, #20fc03 , rgb(0, 0, 0));
-            /* height: 400px; */
+        .heading {
+            background-image: linear-gradient(to bottom, #20fc03 60%, rgb(0, 0, 0));
             margin-top: 0px;
             padding-bottom: 100px;
         }
 
         #GFG {
             color: #20fc03;
-            font-size: large;
             font-size: 30px;
             border: #20fc03 2px solid;
-            border-left-color: transparent ;
-            border-right-color: transparent ;
+            border-left-color: transparent;
+            border-right-color: transparent;
         }
 
         ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #000000;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000000;
         }
 
         li {
-        float: left;
+            float: left;
         }
 
         li a {
-        display: block;
-        color: #20fc03;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
+            display: block;
+            color: #20fc03;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
         }
 
         li a:hover:not(.active) {
-        background-color: #20fc03;
-        color: black;
-        border-radius: 10px;
+            background-color: #20fc03;
+            color: black;
+            border-radius: 10px;
         }
 
         .active {
-        background-color: #ff0000;
+            background-color: #ff0000;
         }
         
+        @keyframes shake {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            10%, 30%, 50%, 70%, 90% {
+                transform: translate(-10px, 0);
+            }
+            20%, 40%, 60%, 80% {
+                transform: translate(10px, 0);
+            }
+        }
 
+        .shake {
+            animation: shake 0.5s ease-in-out;
+            animation-iteration-count: infinite;
+        }
     </style>
-
 </head>
-<body style="background-color: black;background-image: url('pngegg.png');">
+<body style="background-color: black; background-image: url('pngegg.png');">
 
     <marquee width="100%" id="GFG">
         Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World
@@ -73,11 +85,45 @@
         <li><a href="dinoden.html" class="den-icon">Dino Den</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#about">About</a></li>
-      </ul>
+    </ul>
 
-    <div class="heading" >
-         <img src="pngegg.png" width="25%" style="padding-top: 2px; margin-left: auto; margin-right: auto;display: flex;justify-content: center;"/>
-        <h1 class="site-name" style="color: #000000; text-align: center; font-size: 200px; font-family: myfont; margin-top: 20px;">Jurassic Sphere</h1>
+    <div class="heading">
+        <audio id="roar-sound" preload="auto">
+            <source src="dinoscream.mpeg" type="audio/ogg">
+            <source src="dinoscream.mpeg" type="audio/mpeg">
+        </audio>
+        <img src="pngegg.png" id="logo" width="25%" onclick="playAudio()" style="padding-top: 2px; margin-left: auto; margin-right: auto; display: flex; justify-content: center;" />
+        <h1 class="site-name" id="site-name" style="color: #000000; text-align: center; font-size: 200px; font-family: myfont; margin-top: 20px;">Jurassic Sphere</h1>
     </div>
+
+    <video width="auto" height="400px" autoplay>
+        <source src="3dino.mov" type="video/mp4">
+        <source src="3dino.mov" type="video/ogg">
+      </video>
+
+    <script>
+        const roarSound = document.getElementById("roar-sound");
+        const logo = document.getElementById("logo");
+        const siteName = document.getElementById("site-name");
+
+        function playAudio() {
+            // Play the roar sound
+            roarSound.currentTime = 0; // Restart the sound if already playing
+            roarSound.play();
+
+            // Start the shake effect after a delay (e.g., 0.5 seconds)
+            setTimeout(() => {
+                logo.classList.add("shake");
+                siteName.classList.add("shake");
+            }, 500); // Delay in milliseconds (0.5s = 500ms)
+
+            // Remove the shake effect once the sound ends
+            roarSound.onended = () => {
+                logo.classList.remove("shake");
+                siteName.classList.remove("shake");
+            };
+        }
+    </script>
+    
 </body>
 </html>
