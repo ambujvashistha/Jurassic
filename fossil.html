@@ -71,27 +71,72 @@
     text-align: center;
 }
 .dinosaur-card {
-    display: inline-block;
-    margin: 1em;
-    padding: 1em;
-    border: 2px solid #20fc03;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-    width: 300px;
-    text-align: left;
-    background: #000000;
-    transition: transform 0.4s;
-}
-h3{
-    color: #20fc03;
-}
-.dinosaur-card:hover {
-    transform: scale(1.3);
-}
-.dinosaur-card img {
-    width: 100%;
-    border-radius: 10px;
-}
+        position: relative;
+        display: inline-block;
+        margin: 1em;
+        width: 300px;
+        height: 400px;
+        perspective: 1000px; /* Enables 3D space for card flipping */
+        transform: scale(1);
+        transition: transform 0.4s;
+    }
+    
+    .dinosaur-card:hover {
+        transform: scale(1.3); /* Adds scaling effect */
+        z-index: 10;
+    }
+    
+    .card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s ease-in-out;
+        transform-style: preserve-3d; /* Keeps children in 3D space */
+    }
+    
+    .dinosaur-card:hover .card-inner {
+        transform: rotateY(180deg); /* Flip the card on hover */
+    }
+    
+    .card-front, .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden; /* Hide the back side until flipped */
+        border: 2px solid #20fc03;
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .card-front {
+        background: #000;
+        color: #20fc03;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .card-front img {
+        width: 80%;
+        border-radius: 10px;
+    }
+    
+    .card-front h3 {
+        margin: 10px 0 5px 0;
+    }
+    
+    .card-back {
+        background: #0a0a0a;
+        color: #02f7df;
+        transform: rotateY(180deg); /* Position the back side */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+    }
 footer {
     text-align: center;
     padding: 20px;
@@ -151,55 +196,164 @@ footer {
 
     <h1 class="page-name" style="color: #20fc03; text-align: center; font-size: 80px; font-family: myfont; margin-top: 20px;">Explore</h1>
     <section id="more" class="section more">
+
         <div class="dinosaur-card">
+          <div class="card-inner">
+            <div class="card-front">
             <img src="Tyrannosaurus_Rex_Holotype.jpg" alt="Tyrannosaurus Rex">
             <h3>Tyrannosaurus Rex</h3>
+            </div>
+            <div class="card-back">
+              <h3>Tyrannosaurus Rex</h3>
+              <p>The most complete T-Rex fossil ever found, nicknamed "Sue," was discovered in South Dakota in 1990. This specimen is over 40 feet long, 13 feet tall at the hips, and contains approximately 85% of the original skeleton. The skull alone is 5 feet long and features 58 teeth, some as long as 8 inches.</p>
+          </div>
+          </div>
         </div>
+
+
         <div class="dinosaur-card">
-            <img src="flickr-3.webp" alt="Brachiosaurus">
-            <h3>Brachiosaurus</h3>
-        </div>
-        <div class="dinosaur-card">
-            <img src="gettyimages-528114846-612x612.jpg" alt="Triceratops">
-            <h3>Triceratops</h3>
-        </div>
-        <div class="dinosaur-card">
-            <img src="Deinonychus_FMNH.jpg" alt="Velociraptor">
-            <h3>Velociraptor</h3>
-        </div>
-        <div class="dinosaur-card">
-            <img src="497YsUS2l9tRPVU7Ajm6Ay.webp" alt="Stegosaurus">
-            <h3>Stegosaurus</h3>
-        </div>
-        <div class="dinosaur-card">
-            <img src="laplatadip.jpg" alt="Diplodocus">
-            <h3>Diplodocus</h3>
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="flickr-3.webp" alt="Brachiosaurus">
+              <h3>Brachiosaurus</h3>
+            </div>
+            <div class="card-back">
+              <h3>Brachiosaurus</h3>
+              <p>One of the most significant Brachiosaurus fossils was discovered in Tanzania between 1907-1912. Known as the "Giraffatitan brancai" specimen, it stands about 39 feet tall and measures roughly 85 feet in length. This well-preserved skeleton helped scientists understand the true scale and anatomy of these massive sauropods.</p>
+            </div>
+          </div>
         </div>
 
         <div class="dinosaur-card">
-            <img src="https___tf-cmsv2-smithsonianmag-media.s3.amazonaws.com_filer_20110520083236Carnegie-Apatosaurus.jpg" alt="Diplodocus">
-            <h3>Brontosaurus</h3>
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="gettyimages-528114846-612x612.jpg" alt="Triceratops">
+              <h3>Triceratops</h3>
+            </div>
+            <div class="card-back">
+              <h3>Triceratops</h3>
+              <p>The most complete Triceratops skeleton, nicknamed "Lane," was found in North Dakota in 2019. It includes about 85% of the dinosaur's bones, including its distinctive three-horned skull measuring over 6 feet long. This remarkable specimen has helped paleontologists better understand the growth and development of these horned dinosaurs.</p>
+            </div>
+          </div>
         </div>
+
         <div class="dinosaur-card">
-            <img src="640px-Allosaurus_SDNHM_(1).jpg" alt="Diplodocus">
-            <h3>Allosaurus</h3>
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="Deinonychus_FMNH.jpg" alt="Velociraptor">
+              <h3>Velociraptor</h3>
+            </div>
+            <div class="card-back">
+              <h3>Velociraptor</h3>
+              <p>The famous "Fighting Dinosaurs" fossil discovered in Mongolia in 1971 shows a Velociraptor and Protoceratops locked in combat. This extraordinary fossil captures a predator-prey interaction frozen in time, providing invaluable insights into Velociraptor's hunting behavior and confirming their aggressive nature.</p>
+            </div>
+          </div>
         </div>
+
         <div class="dinosaur-card">
-            <img src="images.jpeg" alt="Diplodocus">
-            <h3>Therizinosaurus</h3>
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="497YsUS2l9tRPVU7Ajm6Ay.webp" alt="Stegosaurus">
+              <h3>Stegosaurus</h3>
+            </div>
+            <div class="card-back">
+              <h3>Stegosaurus</h3>
+              <p>The most complete Stegosaurus skeleton, "Sophie," was discovered in Wyoming and is housed in London's Natural History Museum. This specimen is 85% complete and includes 360 bones. It revealed new details about the placement and arrangement of the iconic plates along its back and helped determine that male and female Stegosaurus may have had different plate arrangements.</p>
+            </div>
+          </div>
         </div>
+
         <div class="dinosaur-card">
-            <img src="Amargasaurus1_Melb_Museum_email.jpg" alt="Diplodocus">
-            <h3>Amargasaurus</h3>
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="laplatadip.jpg" alt="Diplodocus">
+              <h3>Diplodocus</h3>
+            </div>
+            <div class="card-back">
+              <h3>Diplodocus</h3>
+              <p>The famous "Carnegie Diplodocus" discovered in Wyoming in 1899 was so well-preserved that casts of it were sent to museums all over the world. Measuring 87 feet long, this specimen helped establish Diplodocus as one of the longest dinosaurs known and revealed crucial details about sauropod anatomy and posture.</p>
+            </div>
+          </div>
         </div>
+
         <div class="dinosaur-card">
-            <img src="iguanodon-fossil-skeleton.jpg" alt="Diplodocus">
-            <h3>Iguanodon</h3>
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="https___tf-cmsv2-smithsonianmag-media.s3.amazonaws.com_filer_20110520083236Carnegie-Apatosaurus.jpg" alt="Brontosaurus">
+              <h3>Brontosaurus</h3>
+            </div>
+            <div class="card-back">
+              <h3>Brontosaurus</h3>
+              <p>The original Brontosaurus excelsus specimen, discovered in 1879 by Othniel Charles Marsh, helped reignite the debate about this dinosaur's existence. In 2015, a comprehensive study of 81 sauropod specimens confirmed Brontosaurus as a distinct genus, separate from Apatosaurus, ending a century-long scientific controversy.</p>
+            </div>
+          </div>
         </div>
+
         <div class="dinosaur-card">
-            <img src="6KhYwjf4w9hZZshGmpoSEP.jpg" alt="Diplodocus">
-            <h3>Microraptor</h3>
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="640px-Allosaurus_SDNHM_(1).jpg" alt="Allosaurus">
+              <h3>Allosaurus</h3>
+            </div>
+            <div class="card-back">
+              <h3>Allosaurus</h3>
+              <p>The Cleveland-Lloyd Dinosaur Quarry in Utah has yielded over 46 Allosaurus specimens, including "Big Al," one of the most complete Allosaurus skeletons ever found. This 95% complete skeleton showed evidence of numerous injuries and infections, providing insights into dinosaur healing and survival in the Jurassic period.</p>
+            </div>
+          </div>
         </div>
+
+        <div class="dinosaur-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="images.jpeg" alt="Therizinosaurus">
+              <h3>Therizinosaurus</h3>
+            </div>
+            <div class="card-back">
+              <h3>Therizinosaurus</h3>
+              <p>The most striking Therizinosaurus fossils were discovered in Mongolia's Gobi Desert in the 1940s. The initial discovery included massive 3-foot-long claws, which were first mistaken for ribs of a turtle. Later discoveries revealed that these belonged to one of the strangest-looking dinosaurs, with the longest claws of any known animal.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dinosaur-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="Amargasaurus1_Melb_Museum_email.jpg" alt="Amargasaurus">
+              <h3>Amargasaurus</h3>
+            </div>
+            <div class="card-back">
+              <h3>Amargasaurus</h3>
+              <p>The only known complete Amargasaurus skeleton was discovered in La Amarga, Argentina in 1984. This unique specimen revealed the dinosaur's most distinctive feature: a double row of tall neural spines along its neck and back. The 15-foot-long skeleton has helped paleontologists understand this unusual sauropod's appearance and lifestyle.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dinosaur-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="iguanodon-fossil-skeleton.jpg" alt="Iguanodon">
+              <h3>Iguanodon</h3>
+            </div>
+            <div class="card-back">
+              <h3>Iguanodon</h3>
+              <p>In 1878, an extraordinary discovery of multiple complete Iguanodon skeletons was made in a coal mine in Bernissart, Belgium. These specimens, including at least 38 individuals, provided unprecedented insights into Iguanodon anatomy and helped correct early misconceptions about their appearance, including the famous "thumb spike" that was initially thought to be a horn.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dinosaur-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="6KhYwjf4w9hZZshGmpoSEP.jpg" alt="Microraptor">
+              <h3>Microraptor</h3>
+            </div>
+            <div class="card-back">
+              <h3>Microraptor</h3>
+              <p>Discovered in China's Liaoning Province, Microraptor fossils are among the most well-preserved dinosaur specimens ever found. These fossils, preserved in fine-grained lake sediments, clearly show impressions of feathers on all four limbs. This remarkable preservation helped prove that some dinosaurs had four wings, revolutionizing our understanding of dinosaur-bird evolution.</p>
+            </div>
+          </div>
+        </div>
+
     </section>
 </body>
 </html>
