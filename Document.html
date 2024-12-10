@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://127.0.0.1:5501/home.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        @font-face {
+            font-family: myfont;
+            src: url(MadLines.ttf);
+        }
+
+        
+
+        .heading {
+            background-image: linear-gradient(to bottom, #20fc03 60%, rgb(0, 0, 0));
+            margin-top: 0px;
+            padding-bottom: 100px;
+        }
+
+        #GFG {
+            color: #20fc03;
+            font-size: 30px;
+            border: #20fc03 2px solid;
+            border-left-color: transparent;
+            border-right-color: transparent;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000000;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: #20fc03;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #20fc03;
+            color: black;
+            border-radius: 10px;
+        }
+
+        .active {
+            background-color: #ff0000;
+        }
+        
+        @keyframes shake {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            10%, 30%, 50%, 70%, 90% {
+                transform: translate(-10px, 0);
+            }
+            20%, 40%, 60%, 80% {
+                transform: translate(10px, 0);
+            }
+        }
+
+        .shake {
+            animation: shake 0.5s ease-in-out;
+            animation-iteration-count: infinite;
+        }
+    </style>
+</head>
+<body style="background-color: black; background-image: url(&#39;pngegg.png&#39;);">
+
+    <marquee width="100%" id="GFG">
+        Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World
+    </marquee>
+    
+    <ul>
+        <li><a href="http://127.0.0.1:5501/home.html">Home</a></li>
+        <li><a href="http://127.0.0.1:5501/facts.html">Dinocope</a></li>
+        <li><a href="http://127.0.0.1:5501/fossil.html">Dinos-ORE</a></li>
+        <li><a href="http://127.0.0.1:5501/dinoden.html" class="den-icon">Dino Den</a></li>
+        <li><a href="http://127.0.0.1:5501/home.html#contact">Contact</a></li>
+        <li><a href="http://127.0.0.1:5501/home.html#about">About</a></li>
+    </ul>
+
+    <div class="heading">
+        <audio id="roar-sound" preload="auto">
+            <source src="dinoscream.mpeg" type="audio/ogg">
+            <source src="dinoscream.mpeg" type="audio/mpeg">
+        </audio>
+        <img src="./Document_files/pngegg.png" id="logo" width="25%" onclick="playAudio()" style="padding-top: 2px; margin-left: auto; margin-right: auto; display: flex; justify-content: center;">
+        <h1 class="site-name" id="site-name" style="color: #000000; text-align: center; font-size: 200px; font-family: myfont; margin-top: 20px;">Jurassic Sphere</h1>
+    </div>
+
+    <video width="auto" height="400px" autoplay="">
+        <source src="3dino.mov" type="video/mp4">
+        <source src="3dino.mov" type="video/ogg">
+      </video>
+
+    <script>
+        const roarSound = document.getElementById("roar-sound");
+        const logo = document.getElementById("logo");
+        const siteName = document.getElementById("site-name");
+
+        function playAudio() {
+            // Play the roar sound
+            roarSound.currentTime = 0; // Restart the sound if already playing
+            roarSound.play();
+
+            // Start the shake effect after a delay (e.g., 0.5 seconds)
+            setTimeout(() => {
+                logo.classList.add("shake");
+                siteName.classList.add("shake");
+            }, 500); // Delay in milliseconds (0.5s = 500ms)
+
+            // Remove the shake effect once the sound ends
+            roarSound.onended = () => {
+                logo.classList.remove("shake");
+                siteName.classList.remove("shake");
+            };
+        }
+    </script>
+    
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>

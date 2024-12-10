@@ -11,8 +11,6 @@
             src: url(MadLines.ttf);
         }
 
-        
-
         .heading {
             background-image: linear-gradient(to bottom, #20fc03 60%, rgb(0, 0, 0));
             margin-top: 0px;
@@ -73,6 +71,92 @@
             animation: shake 0.5s ease-in-out;
             animation-iteration-count: infinite;
         }
+
+
+        .play-button {
+            background: linear-gradient(to bottom, #20fc03, #117a01);
+            color: black;
+            font-weight: bold;
+            font-size: 18px;
+            width: 120px;
+            height: 50px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 6px #0a5801;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .play-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px #0a5801;
+        }
+
+        .play-button:active {
+            transform: translateY(3px);
+            box-shadow: 0 4px #0a5801;
+        }
+
+        .tagline {
+            font-size: 24px;
+            color: #20fc03;
+            font-family: Arial, sans-serif;
+            margin-top: 20px;
+            animation: pop 1s infinite alternate;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.2);
+            }
+        }
+
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        .video-container video {
+            margin-bottom: 20px;
+        }
+
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+}
+
+        .image {
+            width: auto;
+            margin: 50px 0;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: transform 1.2s ease, opacity 5s ease;
+}
+
+        .image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-left {
+            transform: translateX(-100%);
+        }
+
+        .image.show {
+            transform: translateX(0);
+            opacity: 1;
+}
     </style>
 </head>
 <body style="background-color: black; background-image: url('pngegg.png');">
@@ -99,10 +183,25 @@
         <h1 class="site-name" id="site-name" style="color: #000000; text-align: center; font-size: 200px; font-family: myfont; margin-top: 20px;">Jurassic Sphere</h1>
     </div>
 
-    <video width="auto" height="400px" autoplay>
-        <source src="3dino.mov" type="video/mp4">
-        <source src="3dino.mov" type="video/ogg">
-      </video>
+    <div class="video-container">
+        <video id="dino-video" width="auto" height="400px" muted>
+            <source src="3dino.mov" type="video/mp4">
+            <source src="3dino.mov" type="video/ogg">
+        </video>
+        <button class="play-button" onclick="playVideo()">Press It</button>
+        <div class="tagline">"Experience the roar of the Jurassic era!"</div>
+    </div>
+
+    <div class="container">
+        <div class="image image-left" data-side="left"><img src="1_The-Incredible-Journey-of-Dinosaurs.png" alt="Image 1"></div>
+        <div class="image image-right" data-side="right"><img src="2_Prehistoric-Beginnings-The-First-Emergence-of-Dinosaurs.png" alt="Image 2"></div>
+        <div class="image image-left" data-side="left"><img src="3_Dominance-of-the-Land-The-Reign-of-the-Dinosaurs.png" alt="Image 3"></div>
+        <div class="image image-right" data-side="right"><img src="4_Evolutionary-Adaptations-How-Dinosaurs-Evolved-Over-Time.png" alt="Image 4"></div>
+        <div class="image image-left" data-side="left"><img src="5_Coexistence-with-Other-Creatures-The-Diverse-Ecosystem.png" alt="Image 5"></div>
+        <div class="image image-right" data-side="right"><img src="6_Extinction-Event-The-Cataclysmic-Demise-of-the-Dinosaurs.png" alt="Image 6"></div>
+        <div class="image image-left" data-side="left"><img src="7_The-Fossil-Record-Uncovering-the-Past.png" alt="Image 7"></div>
+        <div class="image image-right" data-side="right"><img src="8_Lessons-from-the-Past-Understanding-the-Dinosaur-Legacy.png" alt="Image 8"></div>
+    </div>
 
     <script>
         const roarSound = document.getElementById("roar-sound");
@@ -126,6 +225,46 @@
                 siteName.classList.remove("shake");
             };
         }
+
+        const dinoVideo = document.getElementById('dino-video');
+
+        function playVideo() {
+            dinoVideo.currentTime = 0;
+            dinoVideo.muted = false;
+            dinoVideo.play();
+
+            // Stop the video 0.1 seconds before the end
+            dinoVideo.addEventListener('timeupdate', () => {
+                if (dinoVideo.duration - dinoVideo.currentTime <= 1.1) {
+                    dinoVideo.pause();
+                }
+            });
+        }
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll(".image");
+    const revealThreshold = window.innerHeight / 2; // Half the viewport height
+
+    const revealOnScroll = () => {
+        images.forEach(image => {
+            const rect = image.getBoundingClientRect();
+
+            if (rect.top < revealThreshold && rect.bottom > revealThreshold) {
+                // Image is in the middle of the viewport
+                image.classList.add("show");
+            } else {
+                // Remove the class if the image is out of view
+                image.classList.remove("show");
+            }
+        });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll(); // Trigger once to handle initial view
+});
+
+
     </script>
     
 </body>
