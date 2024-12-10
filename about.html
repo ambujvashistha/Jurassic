@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - DinoDen</title>
+  <style>
+    @font-face {
+      font-family: 'myfont';
+      src: url('MadLines.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'myfont1';
+      src: url('DeadBitch-Regular.ttf') format('truetype');
+    }
+    .heading {
+      font-family: 'myfont', sans-serif;
+      background-image: linear-gradient(to bottom, #20fc03 60%, rgb(0, 0, 0));
+      margin-top: 0px;
+      padding-bottom: 100px;
+    }
+
+    #GFG {
+      color: #20fc03;
+      font-size: 30px;
+      border: #20fc03 2px solid;
+      border-left-color: transparent;
+      border-right-color: transparent;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #000000;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: #20fc03;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+      background-color: #20fc03;
+      color: black;
+      border-radius: 10px;
+    }
+
+    .about-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .about-section p {
+      font-size: 1.2rem;
+      max-width: 1200px;
+      line-height: 1.8;
+      color: #d4c873;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 1s ease;
+    }
+
+    .about-section p.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .about-section p span {
+      font-family: 'myfont', sans-serif;
+      color: #facc15;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const paragraphs = document.querySelectorAll('.about-section p');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          } else {
+            entry.target.classList.remove('visible');
+          }
+        });
+      }, { threshold: 0.5 });
+
+      paragraphs.forEach(p => observer.observe(p));
+    });
+  </script>
+</head>
+<body style="background-color: black; background-image: url('pngegg.png');">
+  <marquee width="100%" id="GFG">
+    Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World
+  </marquee>
+    
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="facts.html">Dinocope</a></li>
+    <li><a href="fossil.html">Dinos-ORE</a></li>
+    <li><a href="dinoden.html" class="den-icon">Dino Den</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+
+  <div class="heading">
+    <h1 class="site-name" id="site-name" style="color: #000000; text-align: center; font-size: 100px; font-family: myfont1; margin-top: 20px;">
+      Know about 
+      <br>
+      <span style="color: black; font-size: 300px;font-family: myfont;">Dino Sphere</span>
+    </h1>
+  </div>
+
+  <div class="about-section">
+    <p>Welcome to <span>Dino Sphere</span>, the ultimate destination for all things related to dinosaurs and fossils! At Dino Sphere, we are dedicated to unlocking the secrets of the prehistoric world, making learning fun and engaging for enthusiasts of all ages. Whether you are a budding paleontologist or simply curious about the giants that roamed the Earth millions of years ago, we’ve got you covered.</p>
+
+    <p><span>Discover the Giants of the Past</span><br>
+    Dinosaurs were some of the most magnificent creatures to ever exist, and at Dino Sphere, we bring them back to life—through knowledge! From the towering Brachiosaurus to the fierce Tyrannosaurus rex, our site provides detailed profiles of your favorite dinosaurs, including their diets, habitats, and behaviors. Ever wondered how fast a Velociraptor could run or how the Stegosaurus used its spiked tail? Explore these mysteries and more in our comprehensive dinosaur encyclopedia.</p>
+
+    <p><span>Unearth the Power of Fossils</span><br>
+    Fossils are more than just remnants; they are windows into Earth’s distant past. At Dino Sphere, we dive deep into the science of fossilization, explaining how bones, plants, and even footprints become preserved over millions of years. Our interactive tools allow you to visualize the excavation process and understand how paleontologists piece together the puzzle of prehistoric life.</p>
+
+    <p><span>Journey Through Time</span><br>
+    Our timeline feature offers a captivating journey through Earth’s history, showcasing the rise and fall of different dinosaur species across the Triassic, Jurassic, and Cretaceous periods. Learn how climate changes, asteroid impacts, and volcanic eruptions shaped the world these creatures called home. Dino Sphere doesn’t just focus on dinosaurs; we also highlight other ancient animals, from the colossal Megalodon to the awe-inspiring Pterosaurs.</p>
+
+    <p><span>Engage, Learn, and Share</span><br>
+    Dino Sphere is more than just a website—it’s a community. We believe that learning should be interactive and immersive. Through quizzes, virtual fossil digs, and augmented reality experiences, we bring prehistoric creatures closer to you than ever before. Imagine holding a life-sized model of a dinosaur claw or seeing a Triceratops roam through your backyard with AR technology!</p>
+
+    <p><span>Beyond the Past: Why It Matters Today</span><br>
+    Dinosaurs may have gone extinct 65 million years ago, but their legacy lives on. Understanding their world helps us predict how life on Earth might evolve in the future. By studying extinction events and ecological shifts, scientists gain insights into preserving biodiversity today. DinoDen aims to bridge the past and the present, inspiring our audience to appreciate the interconnectedness of life on Earth.</p>
+  </div>
+</body>
+</html>
