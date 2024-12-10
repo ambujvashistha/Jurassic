@@ -5,25 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+     @keyframes zoomIn {
+        from {
+            transform: scale(1);
+        }
+        to {
+            transform: scale(1.55);
+        }
+    }
+    
+    @font-face {
+        font-family: myfont;
+        src: url(MadLines.ttf);
+    }
+    
+    .factheading {
+    background-image: linear-gradient(to bottom, #20fc03 , rgb(0, 0, 0));
+    height: 400px;
+    margin-top: 0px;;
+    }
+    
+    #GFG {
+        color: #20fc03;
+        font-family: myfont;
+        font-size: 30px;
+        border: #20fc03 2px solid;
+        border-left-color: transparent;
+        border-right-color: transparent;
+    }
+    
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #000000;
+    }
+    
+    li {
+        float: left;
+    }
+    
+    li a {
+        display: block;
+        color: #20fc03;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    
+    li a:hover:not(.active) {
+        background-color: #20fc03;
+        color: black;
+        border-radius: 10px;
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background-image: url("dinoooBG copy.png");
-      background-position: 29% 18%;
+    .active {
+        background-color: #ff0000;
     }
+
 
     .about-container {
       display: flex;
       gap: 20px;
+      justify-content: center;
     }
 
     .card {
@@ -92,6 +137,24 @@
   </style>
 </head>
 <body>
+    <body style="background-color: #000000;">
+        <marquee width="100%" id="GFG" >
+            Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World
+        </marquee>
+        
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="facts.html">DinoScope</a></li>
+            <li><a href="fossil.html">Dinos-ORE</a></li>
+            <li><a href="dinoden.html" class="den-icon">Dino Den</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+
+
+        <div class="factheading">
+            <h1 class="site-name" id="site-name" style="color: #000000; text-align: center; font-size: 200px; font-family: myfont; margin-top: 20px;text-align: center;">Meet the <span style="color: red;">Dino Crew</span></h1>
+        </div>
   <div class="about-container">
     <div class="card">
       <div class="card-content">
