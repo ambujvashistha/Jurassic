@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-image: url("dinoooBG copy.png");
+      background-position: 29% 18%;
+    }
+
+    .about-container {
+      display: flex;
+      gap: 20px;
+    }
+
+    .card {
+      width: 350px;
+      height: 450px;
+      perspective: 1000px;
+    }
+
+    .card-content {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: transform 0.6s ease, scale 5.9s;
+      transform-style: preserve-3d;
+    }
+
+    .card:hover .card-content {
+      transform: rotateY(180deg) scale(1.05);
+    }
+
+    .card-front, .card-back {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 1px ;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background: linear-gradient(160deg,transparent, #20fc03,black 70%);
+    }
+
+    .card-front img {
+      width: 55%;
+    }
+
+    .card-front h3 {
+      margin-top: 10px;
+      font-size: 18px;
+      color:white;
+    }
+
+    .card-back {
+      transform: rotateY(180deg);
+      background-color: #333;
+      color:green;
+      gap: 15px;
+    }
+
+    .card-back a {
+      text-decoration: none;
+    }
+
+    .card-back img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s;
+    }
+
+    .card-back img:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="about-container">
+    <div class="card">
+      <div class="card-content">
+        <div class="card-front">
+          <img src="WhatsApp Image 2024-12-10 at 23.08.49 copy.jpeg" alt="Person 1">
+          <h3>Ambuj Vashishtha</h3>
+        </div>
+        <div class="card-back">
+          <a href="https://github.com/ambujvashistha" target="_blank">
+            <img src="github-6980894_640 copy.webp" alt="GitHub">
+          </a>
+          <a href="https://www.linkedin.com/in/ambuj-vashistha-84bb17310/" target="_blank">
+            <img src="174857 copy.png" alt="LinkedIn">
+          </a>
+          <a href="https://www.youtube.com/@ambujvashistha/videos" target="_blank">
+            <img src="youtube-6616310_1280 copy.webp" alt="Youtube">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="card-front">
+          <img src="WhatsApp Image 2024-12-10 at 22.56.39 copy.jpeg" alt="Person 2">
+          <h3>Nandan S Acharya</h3>
+        </div>
+        <div class="card-back">
+          <a href="https://github.com/Nandynamic" target="_blank">
+            <img src="github-6980894_640 copy.webp" alt="GitHub">
+          </a>
+          <a href="https://www.linkedin.com/in/nandan-acharya-9b952631a/" target="_blank">
+            <img src="174857 copy.png" alt="LinkedIn">
+          </a>
+          <a href="https://www.instagram.com/_nanndann_/profilecard/?igsh=MTcyYml0ODN1MnNpdA==" target="_blank">
+            <img src="Instagram_logo_2022.svg copy.webp" alt="Instagram">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="card-front">
+          <img src="WhatsApp Image 2024-12-10 at 20.37.31 (1) copy.jpeg" alt="Person 3">
+          <h3>Ayush Kumar Singh</h3>
+        </div>
+        <div class="card-back">
+          <a href="https://github.com/AyushCoder9" target="_blank">
+            <img src="github-6980894_640 copy.webp" alt="GitHub">
+          </a>
+          <a href="https://www.linkedin.com/in/ayush-kumar-singh-910379320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+            <img src="174857 copy.png" alt="LinkedIn">
+          </a>
+          <a href="https://www.instagram.com/ayushsingh.ofc/profilecard/?igsh=c2UxN2N0MWVpaXZh" target="_blank">
+            <img src="Instagram_logo_2022.svg copy.webp" alt="Instagram">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
