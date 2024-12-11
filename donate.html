@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jurassic Sphere</title>
+    
+    <style>
+        @font-face {
+            font-family: myfont;
+            src: url(MadLines.ttf);
+        }
+
+        .heading {
+            background-image: linear-gradient(to bottom, #20fc03 60%, rgb(0, 0, 0));
+            margin-top: 0px;
+            padding-bottom: 100px;
+        }
+
+        #GFG {
+            color: #20fc03;
+            font-size: 30px;
+            border: #20fc03 2px solid;
+            border-left-color: transparent;
+            border-right-color: transparent;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000000;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: #20fc03;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #20fc03;
+            color: black;
+            border-radius: 10px;
+        }
+
+        .active {
+            background-color: #ff0000;
+        }
+
+        .gradient-text {
+            font-family: 'Arial', sans-serif; /* Replace with your desired font */
+            background: linear-gradient(to bottom, black, yellow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+            padding: 10px;
+            margin: 0 50px;
+            text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background-color: #20fc03b8;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 500px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease; /* Added background-color transition */
+  padding: 20px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 0, 0.732); /* Color change to yellow */
+}
+
+.text-container {
+  margin-bottom: 20px;
+}
+
+.qr-container {
+  padding: 20px; /* Adds space between the card and QR code */
+}
+
+.qr-img {
+  width: 100%;
+  transition: filter 0.3s ease; /* Smooth transition for color change */
+}
+
+.card:hover .qr-img {
+  filter: hue-rotate(60deg); /* Changes color of QR from green to yellow */
+}
+    </style>
+</head>
+<body style="background-color: black; background-image: url('pngegg.png');">
+
+    <marquee width="100%" id="GFG">
+        Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World Jurassic World <span style="color: red;">🚨 Don't click on the Dino Icon!!</span>
+    </marquee>
+    
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="facts.html">DinoScope</a></li>
+        <li><a href="fossil.html">Dinos-ORE</a></li>
+        <li><a href="dinoden.html" class="den-icon">Dino Den</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="heading" >
+        <h1 class="page-name" style="color: #000000; text-align: center; font-size: 200px; font-family: myfont; margin-top: 20px;">Donate</h1>
+        <h2 class="gradient-text">Your generous contributions empower us to bring our ideas to life and achieve greater milestones in our journey. Every donation, big or small, helps us innovate, expand, and create impactful projects for a brighter future. By supporting us, you’re not just funding a project; you’re investing in a vision that strives to inspire and create change. Together, we can make a difference and turn dreams into reality. Thank you for being a vital part of our journey—your support means the world to us!
+            <p></p>
+            Below, we have provided a secure QR code for your convenience. Your support through a contribution is greatly appreciated and will help us continue building innovative projects and achieving our vision. Thank you for considering being a part of our journey!
+        </h3>
+    </div>
+    
+    <div class="wrapper">
+    <div class="card">
+        <div class="text-container">
+          <h1 style="font-family: myfont;">Scan & Donate</h1>
+        </div>
+        <div class="qr-container">
+          <img src="QR.jpeg" alt="QR Code" class="qr-img">
+        </div>
+      </div>
+    </div>
+      
