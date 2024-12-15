@@ -1,2 +1,2 @@
 # Jurassic
-Website about Dinosaurs and Fossils
+Website about Dinosaurs and Fossils.
