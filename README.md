@@ -2,4 +2,4 @@
 Website about Dinosaurs and Fossils.<br>
 
 
-Team:-Ayush Nandan Ambuj
+Team:-Ayush, Nandan, Ambuj
