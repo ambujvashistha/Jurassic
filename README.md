@@ -1,6 +1,6 @@
 # Jurassic
 Website about Dinosaurs and Fossils.<br>
 Team:<br>
-Ayush 
+Ayush <br>
 Nandan 
 Ambuj
