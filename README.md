@@ -2,5 +2,5 @@
 Website about Dinosaurs and Fossils.<br>
 Team:<br>
 Ayush <br>
-Nandan 
+Nandan <br>
 Ambuj
