@@ -41,9 +41,9 @@ If taken further, Jurassic Sphere could evolve into:
 
 ## 👥 Team
 This project was a **team effort** by three members:  
-- **Ambuj Vashistha**   – [Linedin](https://www.linkedin.com/in/ambuj-vashistha)  
-- **Nandan S Acharya**  – [Linedin](https://www.linkedin.com/in/nandan-acharya-9b952631a/)
-- **Ayush Kumar Singh** – [Linkedin] (https://www.linkedin.com/in/ayush-kumar-singh-910379320/)
+- **Ambuj Vashistha**   – [Linkedin](https://www.linkedin.com/in/ambuj-vashistha)  
+- **Nandan S Acharya**  – [Linkedin](https://www.linkedin.com/in/nandan-acharya-9b952631a/)
+- **Ayush Kumar Singh** – [Linkedin](https://www.linkedin.com/in/ayush-kumar-singh-910379320/)
 
 ---
 
