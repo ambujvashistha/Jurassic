@@ -29,7 +29,6 @@ It doesn’t solve a real-world problem, but it was chosen because of its **cool
 - Balancing interactivity with simplicity as we were just starting out with JavaScript.
 
 ---
-
 ## 🔮 Future Scope
 If taken further, Jurassic Sphere could evolve into:
 - A **dynamic dinosaur encyclopedia** with community contributions.
